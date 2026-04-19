@@ -27,7 +27,7 @@ function verificarEdad() {
         // Espera 1.5 segundos para que el usuario vea el mensaje de éxito y luego redirige
         setTimeout(() => {
             // "indexx.html" es el enlace a la siguiente página
-            window.location.href = "index.html";
+            window.location.href = "Roche.html";
         }, 1500);
     }
 }
