@@ -13,7 +13,19 @@
    MODO OSCURO - SOLUCIÓN MAESTRA
 ================================ */
 
+body.dark-mode .habit-card h5 {
+    color: #ffffff !important;
+}
 
+body.dark-mode .habit-card p,
+body.dark-mode .habit-card div {
+    color: #e0e0e0 !important;
+}
+
+body.dark-mode .habit-card {
+    background-color: #242424 !important;
+    border-color: #444 !important;
+}
 
 .dark-mode {
   --bg: #000000;

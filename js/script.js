@@ -1,27 +1,34 @@
 /* ============================================================
-        1. MODO OSCURO
-       ============================================================ */
-    const toggleBtn = document.getElementById("darkModeToggle");
-    const icon = toggleBtn ? toggleBtn.querySelector(".icon") : null;
+    CONFIGURACIÓN DE MODO OSCURO (CORREGIDO)
+   ============================================================ */
+const toggleBtn = document.getElementById("darkModeToggle");
+const icon = toggleBtn.querySelector(".icon") || toggleBtn; // Por si el icono es el botón mismo
 
-    if (localStorage.getItem("theme") === "dark") {
-        document.body.classList.add("dark-mode");
-        if (icon) icon.textContent = "☀️";
+// 1. Al cargar la página, revisar si ya estaba en modo oscuro
+if (localStorage.getItem("theme") === "dark") {
+    document.body.classList.add("dark-mode");
+    if (icon) icon.textContent = "☀️";
+}
+
+toggleBtn.addEventListener("click", () => {
+    // Alternar la clase en el body
+    document.body.classList.toggle("dark-mode");
+
+    // Animación de rebote/click
+    toggleBtn.classList.add("animate");
+    setTimeout(() => {
+        toggleBtn.classList.remove("animate");
+    }, 500);
+
+    // Cambiar icono y GUARDAR preferencia
+    if (document.body.classList.contains("dark-mode")) {
+        icon.textContent = "☀️";
+        localStorage.setItem("theme", "dark"); // Guarda que prefiere oscuro
+    } else {
+        icon.textContent = "🌙";
+        localStorage.setItem("theme", "light"); // Guarda que prefiere claro
     }
-
-    if (toggleBtn) {
-        toggleBtn.addEventListener("click", () => {
-            document.body.classList.toggle("dark-mode");
-            if (document.body.classList.contains("dark-mode")) {
-                if (icon) icon.textContent = "☀️";
-                localStorage.setItem("theme", "dark");
-            } else {
-                if (icon) icon.textContent = "🌙";
-                localStorage.setItem("theme", "light");
-            }
-        });
-    }
-
+});
 
 
 const canvas = document.getElementById("medicineParticles");
