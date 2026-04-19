@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sostenibilidad Humana y Autocuidado | Roche</title>
+<link rel="icon" href="assets/images/logo.png" type="image/png">
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="css/styless.css" rel="stylesheet">
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg bg-white shadow-sm fixed-top">
+
+  <div class="container d-flex justify-content-between align-items-center">
+
+    <!-- IZQUIERDA: MENÚ + DARK MODE -->
+    <div class="d-flex align-items-center order-1">
+
+      <!-- DARK MODE -->
+      <button id="darkModeToggle" class="theme-toggle ms-3">
+        <span class="icon">🌙</span>
+      </button>
+
+      <button onclick="history.back()" class="btn-volver">
+        ← Volver
+      </button>
+
+    </div>
+
+    <!-- DERECHA: LOGO -->
+    <a class="navbar-brand order-2 ms-auto" href="#">
+      <img src="assets/images/logo.png" alt="Roche Logo" class="logo-roche">
+    </a>
+
+  </div>
+
+</nav>
+
+<!-- HERO -->
+<header class="hero text-center">
+
+  <!-- Ondas dinámicas -->
+  <div class="waves">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- Partículas medicina -->
+  <canvas id="medicineParticles"></canvas>
+
+  <div class="hero-content">
+    <h1 class="hero-title">Reconocimientos</h1>
+    <p class="hero-subtitle">
+    </p>
+  </div>
+
+</header>
+
+<section class="reconocimientos">
+
+  <h2 class="reco-title text-center">Reconocimientos de Roche</h2>
+
+  <div class="reco-grid">
+
+    <!-- CARD 1 -->
+    <div class="reco-card">
+      <img src="assets/images/reco1.jpg" alt="Great Place to Work">
+      <div class="reco-content">
+        <h4>ROCHE ES RECONOCIDA COMO LA MEJOR FARMACÉUTICA PARA TRABAJAR EN EL PERÚ</h4>
+        <span class="reco-year">2018</span>
+        <p>Elegida por sus propios colaboradores, Roche Farma se ubicó en el puesto 14 del Ranking Great Place to Work (Mejor Lugar para Trabajar) entre las empresas que cuentan con 20 a 250 trabajadores</p>
+        <a href="https://noticias.rse.pe/roche-es-reconocida-como-la-mejor-farmaceutica-para-trabajar-en-el-peru/" target="_blank">Ver reconocimiento →</a>
+      </div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="reco-card">
+      <img src="assets/images/reco2.jpg" alt="Top Employer">
+      <div class="reco-content">
+        <h4>Roche recibe certificación LEED-Oro por implementación de oficinas Green</h4>
+        <span class="reco-year">2010</span>
+        <p>Roche Perú recibió la certificación en Liderazgo de Energía y Diseño Medioambiental</p>
+        <a href="https://stakeholders.com.pe/noticias-sh/roche-recibe-certificacion-leed-oro-por-implementacion-de-oficinas-green/" target="_blank">Ver reconocimiento →</a>
+      </div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="reco-card">
+      <img src="assets/images/reco3.jpg" alt="Sostenibilidad">
+      <div class="reco-content">
+        <h4>Merco Talento 2019</h4>
+        <span class="reco-year">2019</span>
+        <p>Reconocimiento obtenido en el ranking Merco Talento 2019, como las organizaciones del sector farmacéutico con mayor capacidad para atraer y retener el talento</p>
+        <a href="https://web.facebook.com/Alafarpe/posts/felicitamos-a-los-laboratorios-bayer-pfizer-per%C3%BA-roche-per%C3%BA-merck-y-sanofi-por-e/624098167998375/?_rdc=1&_rdr#" target="_blank">Ver reconocimiento →</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="reco-grid">
+
+    <!-- CARD 4 -->
+    <div class="reco-card">
+      <img src="assets/images/reco4.jpg" alt="Great Place to Work">
+      <div class="reco-content">
+        <h4>Great Place To Work</h4>
+        <span class="reco-year">2020</span>
+        <p>Roche es una empresa pionera a nivel mundial en productos farmacéuticos y diagnósticos, centrada en el avance de la ciencia para mejorar la vida de las personas.</p>
+        <a href="https://www.greatplacetowork.com/worlds-best-profile/roche" target="_blank">Ver reconocimiento →</a>
+      </div>
+    </div>
+
+    <!-- CARD 5 -->
+    <div class="reco-card">
+      <img src="assets/images/reco5.jpg" alt="Top Employer">
+      <div class="reco-content">
+        <h4>Roche Diagnóstica Perú es elegida “Empresa Peruana del Año 2024” en salud‑laboratorios farmacéuticos</h4>
+        <span class="reco-year">2024</span>
+        <p>En una ceremonia realizada en Lima, Roche Diagnóstica Perú (Productos Roche Q.F. S.A.) fue reconocida como Empresa Peruana del Año 2024 en la categoría Salud</p>
+        <a href="https://www.diagnosticsnews.com/empresas/peru-roche-diagnostica-peru-es-elegida-empresa-peruana-del-ano-2024-en-salud-laboratorios-farmaceuticos" target="_blank">Ver reconocimiento →</a>
+      </div>
+    </div>
+
+    <!-- CARD 6 -->
+    <div class="reco-card">
+      <img src="assets/images/reco6.jpg" alt="Sostenibilidad">
+      <div class="reco-content">
+        <h4>Roche Farma España, Premio Progreso de Madrid Excelente por su compromiso con la innovación y el desarrollo tecnológico</h4>
+        <span class="reco-year">2025</span>
+        <p>Roche Farma España ha sido galardonada con el Premio Progreso de Madrid Excelente por su compromiso con la innovación biomédica y el desarrollo tecnológico.</p>
+        <a href="https://www.roche.es/actualidad/notas-prensa/2025/enero/roche-farma-premio-compromiso-innovacion-desarrollo" target="_blank">Ver reconocimiento →</a>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ================= CHATBOT IA ================= -->
+
+<div id="chatbot">
+
+<!-- BOTÓN FLOTANTE -->
+<div id="chatToggle">💬</div>
+
+<!-- CHATBOX -->
+<div id="chatbox" class="hidden">
+
+<div class="chat-header">
+<div class="bot-info">
+<div class="bot-avatar">🤖</div>
+<div>
+<h6>Roche Care IA</h6>
+<small>Asistente emocional</small>
+</div>
+</div>
+<span id="closeChat">✕</span>
+</div>
+
+<div id="messages">
+<div class="message bot">
+Hola 👋 ¿Cómo te sientes hoy?
+</div>
+</div>
+
+<div class="typing" id="typing">IA escribiendo...</div>
+
+<div class="chat-input">
+<input id="userInput" placeholder="Escribe cómo te sientes..." />
+<button id="sendBtn">➤</button>
+</div>
+
+</div>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="footer text-center">
+
+<div class="container">
+
+<h5 class="footer-title">
+© Roche Perú — Plataforma de Autocuidado
+</h5>
+
+<p class="footer-sub">
+Cuidando tu bienestar emocional todos los días 
+</p>
+
+<!-- Redes sociales -->
+<div class="social-icons">
+
+<a href="https://web.facebook.com/RochePharmaPeru/?locale=es_LA&_rdc=1&_rdr#" class="social-link">
+<i class="bi bi-facebook"></i>
+</a>
+
+<a href="https://www.instagram.com/roche_latam/" class="social-link">
+<i class="bi bi-instagram"></i>
+</a>
+
+<a href="https://x.com/Roche" class="social-link">
+<i class="bi bi-twitter-x"></i>
+</a>
+
+<a href="https://www.linkedin.com/showcase/rocheperu/?originalSubdomain=pe" class="social-link">
+<i class="bi bi-linkedin"></i>
+</a>
+
+</div>
+
+<!-- LIBRO DE RECLAMACIONES -->
+<a href="#" class="reclamaciones-link" data-bs-toggle="modal" data-bs-target="#reclamacionesModal">
+ Libro de Reclamaciones
+</a>
+
+<div class="modal fade" id="reclamacionesModal">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content reclamaciones-modal">
+
+<div class="modal-header border-0">
+<h5 class="modal-title"> Libro de Reclamaciones</h5>
+<button class="btn-close" data-bs-dismiss="modal"></button>
+</div>
+
+<div class="modal-body">
+
+<p class="text-primary mb-3">
+Tu opinión es importante. Déjanos tu reclamo o sugerencia 💙
+</p>
+
+<!-- Nombre -->
+<div class="form-floating mb-3">
+<input type="text" class="form-control" id="nombre" placeholder="Nombre">
+<label> Nombre completo</label>
+</div>
+
+<!-- Email -->
+<div class="form-floating mb-3">
+<input type="email" class="form-control" id="correo" placeholder="Correo">
+<label> Correo electrónico</label>
+</div>
+
+<!-- Tipo -->
+<select class="form-select mb-3">
+<option selected disabled>Tipo de solicitud</option>
+<option>Reclamo</option>
+<option>Queja</option>
+<option>Sugerencia</option>
+</select>
+
+<!-- Mensaje -->
+<div class="form-floating mb-3">
+<textarea class="form-control" style="height:120px" placeholder="Mensaje"></textarea>
+<label> Describe tu caso</label>
+</div>
+
+</div>
+
+<div class="modal-footer border-0 d-flex justify-content-between">
+
+<small class="text-muted">Respuesta en 24-48h</small>
+
+<button class="btn-send">
+ Enviar
+</button>
+
+</div>
+
+</div>
+</div>
+</div>
+
+</div>
+
+</footer>
+
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/scriptt.js"></script>
+<script src="js/chatbot.js"></script>
+<script src="js/app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script type="module" src="js/emociones.js"></script>
+<script type="module" src="js/firebase.js"></script>
+<script src="components/Search.js"></script>
+</body>
+</html>

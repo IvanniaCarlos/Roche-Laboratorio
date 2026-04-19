@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ROCHE</title>
+  <link rel="icon" href="assets/images/logo.png" type="image/png">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  
+  <link rel="stylesheet" href="css/inicio.css">
+</head>
+
+<body>
+
+
+<div id="ageScreen" class="screen active">
+
+  <div class="box">
+    <h2>Hola 👋</h2>
+    <p>¿Cuántos años tienes?</p>
+
+    <input type="number" id="ageInput" placeholder="Tu edad">
+
+    <button onclick="verificarEdad()">Continuar</button>
+
+    <p id="ageMsg"></p>
+  </div>
+
+</div>
+
+
+
+<div id="authScreen" class="screen">
+
+  <div class="auth-container">
+
+  
+    <div class="auth-image">
+      <img src="assets/images/celeste.png">
+    </div>
+
+   
+    <div class="auth-form">
+
+      
+      <img src="assets/images/logo.png" class="logo">
+
+      <h2>Bienvenido 💙</h2>
+
+      <input type="email" id="email" placeholder="Correo">
+      <input type="password" id="password" placeholder="Contraseña">
+
+      <button onclick="registrar()">Registrarse</button>
+
+      <p>¿Ya tienes cuenta?</p>
+
+      <button class="login-btn" onclick="login()">Iniciar sesión</button>
+
+      <p id="authMsg"></p>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<div id="mainContent" class="screen">
+  <h1>Bienvenido a la plataforma 💙</h1>
+</div>
+
+
+
+<script src="js/inicio.js"></script>
+
+</body>
+</html>
+
+
+
+
