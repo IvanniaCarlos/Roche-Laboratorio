@@ -620,12 +620,13 @@ body{
 }
 
 .carousel-item {
-    height: 520px; 
+height: 520px; 
     border-radius: 12px;
     overflow: hidden;
+    /* ELIMINAMOS EL SHADOW PONIENDO NONE */
+    box-shadow: none !important;
     /* BORDE MÍNIMO APENAS NOTABLE */
     border: 1.5px solid #0c1f25 !important;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     position: relative;
 }
 
@@ -650,7 +651,7 @@ body{
     padding: 20px 25px;
     /* Fondo blanco traslúcido muy suave */
     background: rgba(224, 247, 255, 0.9); 
-    backdrop-filter: blur(8px); /* Efecto vidrio */
+    
     border-radius: 12px;
     z-index: 10;
     text-align: left;
@@ -659,31 +660,25 @@ body{
 /* TÍTULO Y PÁRRAFO EN NEGRO PARA QUE SE NOTEN */
 .overlay-text h4 {
     color: #e3ecf4 !important; 
-    font-size: 1.8rem;
-    font-weight: 800;
-    margin-bottom: 5px;
+margin-bottom: 5px;
+    text-shadow: none !important;
 }
 
 .overlay-text p {
     color: #e9e7e7 !important; 
-    font-size: 1.1rem;
-    font-weight: 500;
-    margin: 0;
-    line-height: 1.4;
+text-shadow: none !important;
 }
 
 /* INDICADORES */
 .carousel-indicators button {
-    width: 25px !important;
-    height: 4px !important;
-    background-color: #0066CC !important;
+    background-color: #d1d6ff !important; /* El azul claro que elegiste */
+    height: 3px !important; /* Más finito todavía */
     opacity: 0.3;
-    border: none !important;
 }
 
 .carousel-indicators .active {
     opacity: 1;
-    width: 45px !important;
+    
 }
 
 /* RESPONSIVE CELULAR */
