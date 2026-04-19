@@ -10,52 +10,46 @@
 }
 
 /* ===============================
-   MODO OSCURO (CORREGIDO)
+   MODO OSCURO - SOLUCIÓN MAESTRA
 ================================ */
 
 .dark-mode {
   --bg: #000000;
-  --text: #ffffff;   /* 👈 texto blanco */
+  --text: #ffffff;
   --card: #1e293b;
 }
 
-/* 1. LOS TEXTOS: Mantiene lo que ya tenías y asegura visibilidad */
+/* 1. TEXTOS: Forzamos blanco en todos los elementos del nav */
 .dark-mode .nav-link, 
-.dark-mode #sideMenu a,
 .dark-mode .navbar-brand,
 .dark-mode .navbar-toggler,
-.dark-mode .navbar-nav .nav-link {
+.dark-mode #sideMenu a {
     color: #ffffff !important;
 }
 
-/* 2. EL FONDO DEL NAV: Aquí es donde fallaba en celular */
-/* Agregué .navbar-nav para que los items individuales también se pinten */
-.dark-mode .navbar, 
+/* 2. EL FONDO: Esta es la clave para que no salga blanco en celular */
+/* Aplicamos el fondo oscuro a TODA la estructura del nav de Bootstrap */
+.dark-mode .navbar,
 .dark-mode .navbar-collapse,
 .dark-mode .navbar-nav,
+.dark-mode .container-fluid,
 .dark-mode #sideMenu {
     background-color: #1a1a1a !important; 
     border-color: #333 !important;
 }
 
-/* 3. EL BOTÓN HAMBURGUESA: Icono blanco y sin bordes feos */
+/* 3. EL BOTÓN HAMBURGUESA: Para que se vea en el celular */
 .dark-mode .navbar-toggler-icon {
-    filter: invert(1);
+    filter: invert(1) !important; /* Vuelve el icono blanco */
 }
 
 .dark-mode .navbar-toggler {
-    border-color: rgba(255,255,255,0.1);
+    border-color: rgba(255,255,255,0.5) !important;
 }
 
-/* 4. CURSORES: Mantiene tu configuración original */
-#closeChat, 
-#chatToggle, 
-#sendBtn, 
-#menuBtn,
-.theme-toggle,
-.mini-emotion,
-.btn,
-button {
+/* 4. CURSORES Y HEADER (Tus estilos originales) */
+#closeChat, #chatToggle, #sendBtn, #menuBtn,
+.theme-toggle, .mini-emotion, .btn, button {
     cursor: pointer !important;
 }
 
@@ -63,7 +57,7 @@ button {
     cursor: default !important;
 }
 
-/* 5. EL TOGGLE (EL BOTÓN DE SOL/LUNA): Mantiene tu diseño */
+/* 5. TOGGLE (BOTÓN SOL/LUNA): Tu diseño original */
 .theme-toggle {
     width: 50px;
     height: 50px;
@@ -74,7 +68,6 @@ button {
     align-items: center;
     justify-content: center;
     font-size: 22px;
-    cursor: pointer;
     transition: all .35s ease;
     box-shadow: 0 4px 12px rgba(0,102,204,.25);
 }
@@ -85,10 +78,9 @@ button {
     box-shadow: 0 0 15px rgba(255,209,102,.4);
 }
 
-/* Animaciones del icono que ya tenías */
 .theme-toggle:hover { transform: translateY(-3px) scale(1.05); }
 .theme-toggle:active { transform: scale(.9); }
-.theme-toggle .icon { transition: transform .5s ease, opacity .3s; }
+.theme-toggle .icon { transition: transform .5s ease; }
 .theme-toggle.animate .icon { transform: rotate(360deg); }
 
 /* ================= DARK MODE TOGGLE ================= */
