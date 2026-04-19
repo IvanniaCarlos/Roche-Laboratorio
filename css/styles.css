@@ -17,42 +17,47 @@
    MODO OSCURO - CORRECCIÓN PARA SIDE-MENU
 ================================================= */
 
+/* ==============================================
+   MODO OSCURO - TODO EN UNO (CORREGIDO)
+================================================= */
+
 .dark-mode {
   --bg: #000000;
   --text: #ffffff;
   --card: #1e293b;
 }
 
-/* 1. EL MENÚ LATERAL (El que salía blanco en la foto) */
-/* Cambiamos el degradado blanco por uno oscuro */
+/* 1. EL MENÚ LATERAL (Corrección de degradado) */
 .dark-mode .side-menu {
-    background: linear-gradient(135deg, #000000, #1a1a1a) !important;
+    /* Usamos !important para ganarle al blanco que tiene tu código original */
+    background: linear-gradient(135deg, #000000, #1e293b) !important;
     color: #ffffff !important;
     box-shadow: 5px 0 25px rgba(0,0,0,0.8) !important;
 }
 
-/* 2. TEXTOS Y LINKS: Forzamos blanco en todo el nav y menú lateral */
+/* 2. TEXTOS Y LINKS (Nav y Menú Lateral) */
 .dark-mode .nav-link, 
 .dark-mode .navbar-brand,
 .dark-mode .side-menu a,
-.dark-mode .navbar-toggler {
+.dark-mode .navbar-toggler,
+.dark-mode .side-menu li a {
     color: #ffffff !important;
 }
 
-/* 3. NAVBAR Y BOTÓN HAMBURGUESA */
+/* 3. NAVBAR Y BOTÓN HAMBURGUESA / X */
 .dark-mode .navbar {
     background-color: #000000 !important;
+    border-bottom: 1px solid #333;
 }
 
-.dark-mode .custom-toggler .line {
-    background: #ffffff !important; /* Vuelve blancas las rayitas */
-}
-
+/* Para que las rayitas de tu menú se vean blancas */
+.dark-mode .custom-toggler .line,
 .dark-mode .navbar-toggler-icon {
-    filter: invert(1) !important;
+    background-color: #ffffff !important;
+    filter: invert(1);
 }
 
-/* 4. CURSORES Y HEADER (Tus estilos originales que sí sirven) */
+/* 4. CURSORES Y HEADER (Tus estilos que están bien) */
 #closeChat, #chatToggle, #sendBtn, #menuBtn,
 .theme-toggle, .mini-emotion, .btn, button {
     cursor: pointer !important;
@@ -83,6 +88,7 @@
     box-shadow: 0 0 15px rgba(255,209,102,.4);
 }
 
+/* Animaciones del botón */
 .theme-toggle:hover { transform: translateY(-3px) scale(1.05); }
 .theme-toggle:active { transform: scale(.9); }
 .theme-toggle .icon { transition: transform .5s ease; }
