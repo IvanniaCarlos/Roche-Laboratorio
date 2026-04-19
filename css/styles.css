@@ -9,20 +9,45 @@
  --card:#ffffff;
 }
 
-.dark-mode{
- --bg:#000000;
- --text:#ffffff;   /* 👈 texto blanco */
- --card:#1e293b;
+/* ===============================
+   MODO OSCURO (CORREGIDO)
+================================ */
+
+.dark-mode {
+  --bg: #000000;
+  --text: #ffffff;   /* 👈 texto blanco */
+  --card: #1e293b;
 }
 
- .dark-mode .nav-link, 
+/* 1. LOS TEXTOS: Mantiene lo que ya tenías y asegura visibilidad */
+.dark-mode .nav-link, 
 .dark-mode #sideMenu a,
 .dark-mode .navbar-brand,
-.dark-mode .navbar-toggler {
+.dark-mode .navbar-toggler,
+.dark-mode .navbar-nav .nav-link {
     color: #ffffff !important;
 }
 
+/* 2. EL FONDO DEL NAV: Aquí es donde fallaba en celular */
+/* Agregué .navbar-nav para que los items individuales también se pinten */
+.dark-mode .navbar, 
+.dark-mode .navbar-collapse,
+.dark-mode .navbar-nav,
+.dark-mode #sideMenu {
+    background-color: #1a1a1a !important; 
+    border-color: #333 !important;
+}
 
+/* 3. EL BOTÓN HAMBURGUESA: Icono blanco y sin bordes feos */
+.dark-mode .navbar-toggler-icon {
+    filter: invert(1);
+}
+
+.dark-mode .navbar-toggler {
+    border-color: rgba(255,255,255,0.1);
+}
+
+/* 4. CURSORES: Mantiene tu configuración original */
 #closeChat, 
 #chatToggle, 
 #sendBtn, 
@@ -38,26 +63,33 @@ button {
     cursor: default !important;
 }
 
-/* CON ESTO EL MENÚ DE CELULAR SE PONE OSCURO */
-.dark-mode .navbar, 
-.dark-mode .navbar-collapse {
-    background-color: #1a1a1a !important; 
+/* 5. EL TOGGLE (EL BOTÓN DE SOL/LUNA): Mantiene tu diseño */
+.theme-toggle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background: #E6F4FF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    cursor: pointer;
+    transition: all .35s ease;
+    box-shadow: 0 4px 12px rgba(0,102,204,.25);
 }
 
-/* ESTO VUELVE BLANCO EL ICONO DE LAS 3 RAYITAS */
-.dark-mode .navbar-toggler-icon {
-    filter: invert(1);
+.dark-mode .theme-toggle {
+    background: #1e293b;
+    color: #FFD166;
+    box-shadow: 0 0 15px rgba(255,209,102,.4);
 }
 
-/* ESTO QUITA EL BORDE GRIS DEL BOTÓN */
-.dark-mode .navbar-toggler {
-    border-color: rgba(255,255,255,0.1);
-}
-/* Si usas el menú lateral (sideMenu) que mencionaste antes, aseguremos su fondo */
-.dark-mode #sideMenu {
-    background-color: #1a1a1a !important;
-    border-left: 1px solid #333;
-}
+/* Animaciones del icono que ya tenías */
+.theme-toggle:hover { transform: translateY(-3px) scale(1.05); }
+.theme-toggle:active { transform: scale(.9); }
+.theme-toggle .icon { transition: transform .5s ease, opacity .3s; }
+.theme-toggle.animate .icon { transform: rotate(360deg); }
 
 /* ================= DARK MODE TOGGLE ================= */
 
