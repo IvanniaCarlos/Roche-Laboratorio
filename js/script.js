@@ -77,36 +77,70 @@ animate();
 
 /* ¿Cómo te sientes hoy?*/ 
 
+/* ================= ¿CÓMO TE SIENTES HOY? ================= */
+
 const emotions = document.querySelectorAll(".emotion-card");
 const result = document.getElementById("emotionResult");
 const advice = document.getElementById("emotionAdvice");
 
-const tips = {
-    "Feliz":" Sigue haciendo lo que amas y comparte tu energía positiva.",
-    "Calmado":" Excelente momento para reflexionar o meditar.",
-    "Ansioso":" Respira profundo durante 30 segundos y toma una pausa.",
-    "Triste":" Hablar con alguien cercano puede ayudarte a sentirte mejor."
+// Definiciones y frases más largas
+const infoEmociones = {
+    "Feliz": {
+        definicion: "La felicidad es un estado de bienestar y plenitud. Es el momento perfecto para fortalecer tus conexiones y agradecer por lo que tienes.",
+        consejo: "Sigue haciendo lo que amas y comparte tu energía positiva con los demás.",
+        frase: "¡Que tu alegría de hoy sea el motor de tus grandes sueños! 🌟"
+    },
+    "Calmado": {
+        definicion: "La calma es la ausencia de agitación. Estar en paz te permite ver las cosas con claridad y tomar mejores decisiones.",
+        consejo: "Excelente momento para reflexionar, meditar o simplemente disfrutar del silencio.",
+        frase: "En la tranquilidad del alma reside la verdadera fuerza. 🌿"
+    },
+    "Ansioso": {
+        definicion: "La ansiedad es una señal de que tu mente está viajando al futuro con miedo. Es una respuesta natural, pero no tiene que controlarte.",
+        consejo: "Respira profundo durante 30 segundos, siente tus pies en el suelo y regresa al presente.",
+        frase: "No tienes que ver toda la escalera, solo dar el primer paso con calma. ⚓"
+    },
+    "Triste": {
+        definicion: "La tristeza es una emoción necesaria que nos ayuda a procesar pérdidas o cambios. No es malo sentirse así; es parte de ser humano.",
+        consejo: "Permítete sentir, descansa y recuerda que hablar con alguien cercano puede ayudarte a sentirte mejor.",
+        frase: "Incluso después de la tormenta más fuerte, el sol siempre vuelve a salir. 🌈"
+    }
 };
 
 emotions.forEach(card => {
-
     card.addEventListener("click", () => {
-
         emotions.forEach(c => c.classList.remove("active"));
         card.classList.add("active");
 
         const emotion = card.dataset.emotion;
+        const data = infoEmociones[emotion];
 
-        result.textContent = emotion;
-        advice.textContent = tips[emotion];
+        if (data) {
+            // Cambiamos el color de fondo del contenedor a plomo suave
+            
+            const contenedor = result.parentElement;
+            contenedor.style.backgroundColor = "#dce0e7"; 
+            contenedor.style.borderRadius = "15px";
+            contenedor.style.padding = "25px";
 
-        advice.style.animation = "none";
-        advice.offsetHeight;
-        advice.style.animation = "fadeAdvice .8s forwards";
+            result.textContent = "Estado: " + emotion;
+            
+            // Insertamos el nuevo contenido largo
+            advice.innerHTML = `
+                <p style="margin-bottom: 10px;"><strong>🔍 ¿Qué significa?:</strong> ${data.definicion}</p>
+                <p style="margin-bottom: 10px;"><strong>💡 Sugerencia:</strong> ${data.consejo}</p>
+                <div style="margin-top: 15px; font-weight: bold; color: #2d2d2d; font-size: 1.1rem; text-align: center;">
+                    "${data.frase}"
+                </div>
+            `;
+
+            // Animación
+            advice.style.animation = "none";
+            advice.offsetHeight;
+            advice.style.animation = "fadeAdvice .8s forwards";
+        }
     });
-
 });
-
 //Whole //
 
 function scrollCarousel(direction) {
@@ -121,11 +155,31 @@ function scrollCarousel(direction) {
 
 
 //Dashboard//
-let habitos = {
-  pausa: 0,
-  respiracion: 0,
-  mental: 0
-};
+let habitos = { pausa: 0, respiracion: 0, mental: 0 }; // Aquí está 'mental'
+
+function registrarHabito(tipo) {
+    habitos[tipo]++;
+    const span = document.getElementById(tipo + "Count");
+    if (span) span.textContent = habitos[tipo];
+    evaluarEstres();
+}
+
+function evaluarEstres() {
+    const total = habitos.pausa + habitos.respiracion + habitos.mental;
+    const nivel = document.getElementById("stressNivel");
+    const consejo = document.getElementById("recomendacion");
+
+    if (total <= 2) {
+        nivel.textContent = "🔴 Tu puedes sigue";
+        consejo.textContent = "Te recomendamos hacer ejercicios de respiración y tomar una pausa.";
+    } else if (total <= 5) {
+        nivel.textContent = "🟡 Ya casi lo logras";
+        consejo.textContent = "Vas bien, intenta mantener el equilibrio.";
+    } else {
+        nivel.textContent = "🟢 ¡Felicidades, Lo lograste!";
+        consejo.textContent = "Excelente, sigue cuidando tu bienestar. ¡Eres increíble!";
+    }
+}
 
 function registrarHabito(tipo){
 
@@ -277,3 +331,11 @@ function toggleForm() {
   form.classList.toggle("hidden");
 }
 
+// videoooo
+document.querySelectorAll('.video-container video').forEach(v => {
+    v.addEventListener('mouseover', () => v.play());
+    v.addEventListener('mouseleave', () => {
+        v.pause();
+        v.currentTime = 0; // Reinicia el video al salir
+    });
+});

@@ -395,45 +395,42 @@ Preguntas Frecuentes sobre Bienestar
 
 
 <!-- Dashboard-->
-       <section class="container mt-5 habits-section">
+<section class="container mt-5 habits-section">
+  <h3 class="text-center mb-4" style="color: #0066CC; font-weight: bold;">Relájate un Poco</h3>
 
-  <h3 class="text-center mb-4"> Relajate un Poco</h3>
-
-  <div class="habits-grid">
-
-    <!-- Pausas activas -->
-    <div class="habit-card">
-      <h5> Pausas activas</h5>
-      <p>Muévete y estira tu cuerpo</p>
-      <button onclick="registrarHabito('pausa')">✔ Completar</button>
-      <span id="pausaCount">0</span>
+  <div class="habits-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+    
+    <div class="habit-card" style="background: #FFF8F0; padding: 20px; border-radius: 15px; text-align: center; border: 1px solid #E9E4DE;">
+      <video src="assets/video/pausaactiva.mp4" controls poster="img/miniatura-pausa.jpg" style="width:100%; border-radius:10px; margin-bottom: 10px; background: #000;"></video>
+      <h5>Pausas activas</h5>
+      <p style="font-size: 0.9rem; color: #666;">Muévete y estira tu cuerpo</p>
+      <button onclick="registrarHabito('pausa')" style="background: #00AEEF; color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer;">✔ Completar</button>
+      <div style="margin-top: 10px; font-weight: bold;">Completados: <span id="pausaCount">0</span></div>
     </div>
 
-    <!-- Respiración -->
-    <div class="habit-card">
-      <h5> Respiración</h5>
-      <p>Reduce el estrés en minutos</p>
-      <button onclick="registrarHabito('respiracion')">✔ Completar</button>
-      <span id="respiracionCount">0</span>
+    <div class="habit-card" style="background: #FFF8F0; padding: 20px; border-radius: 15px; text-align: center; border: 1px solid #E9E4DE;">
+      <video src="assets/video/respiracion.mp4" controls poster="img/miniatura-respirar.jpg" style="width:100%; border-radius:10px; margin-bottom: 10px; background: #000;"></video>
+      <h5>Respiración</h5>
+      <p style="font-size: 0.9rem; color: #666;">Reduce el estrés en minutos</p>
+      <button onclick="registrarHabito('respiracion')" style="background: #00AEEF; color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer;">✔ Completar</button>
+      <div style="margin-top: 10px; font-weight: bold;">Completados: <span id="respiracionCount">0</span></div>
     </div>
 
-    <!-- Salud mental -->
-    <div class="habit-card">
-      <h5> Salud mental</h5>
-      <p>Tómate un momento para ti</p>
-      <button onclick="registrarHabito('mental')">✔ Completar</button>
-      <span id="mentalCount">0</span>
+    <div class="habit-card" style="background: #FFF8F0; padding: 20px; border-radius: 15px; text-align: center; border: 1px solid #E9E4DE;">
+      <video src="assets/video/sludmental.mp4" controls poster="img/miniatura-mental.jpg" style="width:100%; border-radius:10px; margin-bottom: 10px; background: #000;"></video>
+      <h5>Salud mental</h5>
+      <p style="font-size: 0.9rem; color: #666;">Tómate un momento para ti</p>
+      <button onclick="registrarHabito('mental')" style="background: #00AEEF; color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer;">✔ Completar</button>
+      <div style="margin-top: 10px; font-weight: bold;">Completados: <span id="mentalCount">0</span></div>
     </div>
 
   </div>
 
-  <!-- NIVEL DE ESTRÉS -->
-  <div class="stress-box mt-4 text-center">
-    <h5>Nivel de estrés detectado</h5>
-    <p id="stressNivel">--</p>
-    <div id="recomendacion"></div>
+  <div id="statusBox" style="margin-top: 30px; padding: 25px; background: #f1f5f9; border-radius: 15px; text-align: center; border: 1px solid #cbd5e1;">
+    <h4 style="color: #475569;">Estado emocional actual</h4>
+    <h2 id="stressNivel" style="font-weight: 900; color: #1e293b; margin: 15px 0;">⚪ Esperando...</h2>
+    <p id="recomendacion" style="font-style: italic; color: #64748b; font-size: 1.1rem;">Selecciona tus hábitos para ver tu progreso.</p>
   </div>
-
 </section>
 
 <div class="text-center my-4">
@@ -614,8 +611,8 @@ Hola 👋 ¿Cómo te sientes hoy?
   <div class="lyra-top-buttons">
 
     <a href="https://wa.me/?text=Te%20comparto%20esta%20página:%20https://tupagina.com" 
-       target="_blank" 
-       class="lyra-btn chat-btn">
+        target="_blank" 
+        class="lyra-btn chat-btn">
       📤 Compartir por WhatsApp
     </a>
 
@@ -737,7 +734,7 @@ Tu opinión es importante. Déjanos tu reclamo o sugerencia 💙
 <small class="text-muted">Respuesta en 24-48h</small>
 
 <button class="btn-send">
- Enviar
+  Enviar
 </button>
 
 </div>
