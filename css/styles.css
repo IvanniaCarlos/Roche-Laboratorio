@@ -38,22 +38,21 @@ button {
     cursor: default !important;
 }
 
-/* Esto asegura que tanto la barra como el menú desplegable sean oscuros */
+/* CON ESTO EL MENÚ DE CELULAR SE PONE OSCURO */
 .dark-mode .navbar, 
-.dark-mode .navbar-collapse,
-.dark-mode .nav-item {
-    background-color: #1a1a1a !important; /* Gris muy oscuro */
+.dark-mode .navbar-collapse {
+    background-color: #1a1a1a !important; 
 }
-/* Color blanco para el icono de menú (hamburguesa) en modo oscuro */
+
+/* ESTO VUELVE BLANCO EL ICONO DE LAS 3 RAYITAS */
 .dark-mode .navbar-toggler-icon {
     filter: invert(1);
 }
 
-/* Quitar bordes blancos del botón en el celular */
+/* ESTO QUITA EL BORDE GRIS DEL BOTÓN */
 .dark-mode .navbar-toggler {
     border-color: rgba(255,255,255,0.1);
 }
-
 /* Si usas el menú lateral (sideMenu) que mencionaste antes, aseguremos su fondo */
 .dark-mode #sideMenu {
     background-color: #1a1a1a !important;
