@@ -106,33 +106,20 @@
 
 <!-- ================= BUSCADOR ================= -->
 <section class="container mt-5">
-
-<div class="search-card">
-
-<h3 class="search-title">Encuentra tu bienestar</h3>
-
-<div class="search-box">
-    <span class="search-icon">🔍</span>
-
-    <input type="text"
-    id="searchInput"
-    placeholder="Ansiedad, estrés, motivación..."
-    autocomplete="off">
-</div>
-
-<!-- Categorías rápidas -->
-<div class="search-tags">
-    <span class="tag">Ansiedad</span>
-    <span class="tag">Relajación</span>
-    <span class="tag">Motivación</span>
-    <span class="tag">Sueño</span>
-</div>
-
-<ul id="results" class="results-list"></ul>
-
-</div>
-
-</section>
+    <div class="search-card">
+        <h3 class="search-title">Encuentra tu bienestar</h3>
+        <div class="search-box">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="searchInput" placeholder="Ansiedad, relajación, motivación..." autocomplete="off">
+        </div>
+        <div class="search-tags">
+            <span class="tag" data-target="ansiedad">Ansiedad</span>
+            <span class="tag" data-target="relajacion">Relajación</span>
+            <span class="tag" data-target="motivacion">Motivación</span>
+            <span class="tag" data-target="sueno">Sueño</span>
+        </div>
+        <div id="results" class="results-list"></div>
+    </div>
 
 
 <!-- COMO TE SIENTES -->

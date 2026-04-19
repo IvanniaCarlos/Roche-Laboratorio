@@ -1026,125 +1026,117 @@ body{
 
 /* ================= BUSCADOR MODERNO ================= */
 
-.search-card{
- background:var(--card);
- padding:35px;
- border-radius:18px;
- box-shadow:0 10px 30px rgba(7, 4, 213, 0.535);
- transition:.3s;
+/* ================= BUSCADOR CORREGIDO ================= */
+
+.search-card {
+    background: #168be5; /* Fondo Crema Suave */
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid #E9E4DE;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
 }
 
-.search-card:hover{
- transform:translateY(-4px);
+.search-card:hover {
+    transform: translateY(-4px);
 }
 
-.search-title{
- text-align:center;
- margin-bottom:25px;
- font-weight:600;
+.search-title {
+    color: #fbf6f3;
+    font-weight: 800;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
-/* Caja búsqueda */
-
-.search-box{
- position:relative;
+/* Caja de búsqueda corregida */
+.search-box {
+    position: relative; /* Para que el icono no flote raro */
+    background: #eef2f7;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    transition: 0.3s;
 }
 
-.search-item{
- opacity:0;
- transform:translateY(10px);
- animation:fadeSearch .4s ease forwards;
+.search-box:focus-within {
+    background: white;
+    box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.2);
 }
 
-@keyframes fadeSearch{
- to{
-  opacity:1;
-  transform:translateY(0);
- }
+.search-box input {
+    width: 100%;
+    padding: 14px 20px 14px 45px;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 16px;
+    color: #333;
 }
 
-.search-box input{
- width:100%;
- padding:14px 15px 14px 45px;
- border-radius:30px;
- border:none;
- outline:none;
- background:#eef2f7;
- transition:.3s;
- font-size:16px;
+.search-icon {
+    position: absolute;
+    left: 15px;
+    font-size: 18px;
+    opacity: 0.6;
 }
 
-.search-box input:focus{
- background:white;
- box-shadow:0 0 0 3px rgba(0,102,204,.2);
+/* Tags / Etiquetas */
+.search-tags {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 15px;
 }
 
-.search-icon{
- position:absolute;
- left:15px;
- top:50%;
- transform:translateY(-50%);
- font-size:18px;
- opacity:.6;
+.tag {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: white;
+    padding: 8px 18px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+    color: #333;
+    font-weight: 500;
 }
 
-/* Tags rápidas */
-
-.search-tags{
-    display:flex;
-    gap:10px;
-    flex-wrap:wrap;
-    margin-top:15px;
+.tag:hover {
+    background: #00AEEF;
+    color: white;
+    border-color: #00AEEF;
+    transform: scale(1.05);
 }
 
-/* TAGS */
-.tag{
-    background:#E6F4FF;        /* celeste suave */
-    color:#0066CC;             /* azul Roche */
-    padding:8px 16px;
-    border-radius:25px;
-    font-size:14px;
-    cursor:pointer;
-    transition:all .3s ease;
-    border:1px solid transparent;
+/* Contenedor de Resultados (La tarjeta que aparece) */
+.info-card-result {
+    background: #ffffff !important;
+    color: #000000 !important; /* Texto bien negro */
+    padding: 20px !important;
+    margin-top: 15px !important;
+    border-radius: 12px !important;
+    border-left: 6px solid #00AEEF !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
+    text-align: left !important;
 }
 
-/* Hover interactivo */
-.tag:hover{
-    background:#0066CC;
-    color:white;
-    transform:translateY(-2px);
-    box-shadow:0 4px 10px rgba(0,102,204,.25);
-}
-/* Resultados */
-
-.results-list{
- margin-top:20px;
- list-style:none;
- padding:0;
+@keyframes resultFade {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-.results-list li{
- background:var(--card);
- padding:12px 18px;
- margin-bottom:10px;
- border-radius:12px;
- cursor:pointer;
- opacity:0;
- transform:translateY(10px);
- animation:resultFade .4s forwards;
- box-shadow:0 5px 15px rgba(0,0,0,.06);
+.info-card-result h4 {
+    color: #0066CC !important;
+    margin-bottom: 8px !important;
+    font-weight: bold !important;
 }
 
-.results-list li:hover{
- transform:scale(1.02);
+.info-card-result p {
+    color: #444;
+    line-height: 1.6;
 }
 
-@keyframes resultFade{
- to{
-  opacity:1;
-  transform:translateY(0);
- }
+.info-card-result ul {
+    margin-top: 10px !important;
+    padding-left: 20px !important;
 }
 
 /* ===== SECCION ===== */
