@@ -20,8 +20,7 @@ function verificarEdad() {
 
     // Espera un momento para que se vea el mensaje de éxito
     setTimeout(() => {
-      // IMPORTANTE: Verifica el nombre exacto de tu archivo aquí
-      // Si tu archivo se llama roche.html, usa: "roche.html"
+
       window.location.href = "roche.html"; 
     }, 1500);
   }
