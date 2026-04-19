@@ -1,84 +1,716 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>ROCHE</title>
-  <link rel="icon" href="assets/images/logo.png" type="image/png">
-
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
-  
-  <link rel="stylesheet" href="css/inicio.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sostenibilidad Humana y Autocuidado | Roche</title>
+<link rel="icon" href="assets/images/logo.png" type="image/png">
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="css/styles.css" rel="stylesheet">
 </head>
 
 <body>
+<nav class="navbar navbar-expand-lg bg-white shadow-sm fixed-top">
 
+  <div class="container d-flex justify-content-between align-items-center">
 
-<div id="ageScreen" class="screen active">
+    <!-- IZQUIERDA: MENÚ + BOTONES -->
+    <div class="d-flex align-items-center gap-3">
 
-  <div class="box">
-    <h2>Hola 👋</h2>
-    <p>¿Cuántos años tienes?</p>
+      <!-- BOTÓN HAMBURGUESA -->
+      <button class="navbar-toggler custom-toggler" type="button" id="menuBtn">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </button>
 
-    <input type="number" id="ageInput" placeholder="Tu edad">
+      <!-- MENÚ -->
+      <div class="collapse navbar-collapse desktop-menu">
+        <ul class="navbar-nav gap-lg-3">
 
-    <button onclick="verificarEdad()">Continuar</button>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.roche-ccav.com/acerca-de/nuestra-historia">Historia</a>
+          </li>
 
-    <p id="ageMsg"></p>
-  </div>
+          <li class="nav-item">
+            <a class="nav-link" href="https://careers.roche.com/es/es">Carrera</a>
+          </li>
 
-</div>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.roche.com.pe/acerca-de-roche/negocios">Negocios</a>
+          </li>
 
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.roche.com.pe/contacto">Contacto</a>
+          </li>
 
+        </ul>
+      </div>
 
-<div id="authScreen" class="screen">
+      <!-- BOTONES (AHORA SÍ JUNTOS) -->
+      <div class="d-flex align-items-center gap-2">
 
-  <div class="auth-container">
+        <!-- DARK MODE -->
+        <button id="darkModeToggle" class="theme-toggle">
+          <span class="icon">🌙</span>
+        </button>
 
-  
-    <div class="auth-image">
-      <img src="assets/images/celeste.png">
+      </div>
+
     </div>
 
-   
-    <div class="auth-form">
+    <!-- DERECHA: LOGO -->
+    <a class="navbar-brand ms-auto" href="#">
+      <img src="assets/images/logo.png" alt="Roche Logo" class="logo-roche">
+    </a>
 
-      
-      <img src="assets/images/logo.png" class="logo">
+  </div>
 
-      <h2>Bienvenido 💙</h2>
+</nav>
 
-      <input type="email" id="email" placeholder="Correo">
-      <input type="password" id="password" placeholder="Contraseña">
+<!-- MENÚ LATERAL -->
+    <div id="sideMenu" class="side-menu">
+      <ul>
+          <li><a href="https://www.roche-ccav.com/acerca-de/nuestra-historia">Historia</a></li>
+          <li><a href="https://careers.roche.com/es/es">Carrera</a></li>
+          <li><a href="https://www.roche.com.pe/acerca-de-roche/negocios">Negocios</a></li>
+          <li><a href="https://www.roche.com.pe/contacto">Contacto</a></li>
+      </ul>
+    </div>
+  </div>
 
-      <button onclick="registrar()">Registrarse</button>
+<!-- HERO -->
+<header class="hero text-center">
 
-      <p>¿Ya tienes cuenta?</p>
+  <!-- Ondas dinámicas -->
+  <div class="waves">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
 
-      <button class="login-btn" onclick="login()">Iniciar sesión</button>
+  <!-- Partículas medicina -->
+  <canvas id="medicineParticles"></canvas>
 
-      <p id="authMsg"></p>
+  <div class="hero-content">
+    <h1 class="hero-title">Tu bienestar importa</h1>
+    <p class="hero-subtitle">
+      Plataforma de salud mental y autocuidado
+    </p>
+  </div>
+
+</header>
+
+<!-- ================= BUSCADOR ================= -->
+<section class="container mt-5">
+
+<div class="search-card">
+
+<h3 class="search-title">Encuentra tu bienestar</h3>
+
+<div class="search-box">
+    <span class="search-icon">🔍</span>
+
+    <input type="text"
+    id="searchInput"
+    placeholder="Ansiedad, estrés, motivación..."
+    autocomplete="off">
+</div>
+
+<!-- Categorías rápidas -->
+<div class="search-tags">
+    <span class="tag">Ansiedad</span>
+    <span class="tag">Relajación</span>
+    <span class="tag">Motivación</span>
+    <span class="tag">Sueño</span>
+</div>
+
+<ul id="results" class="results-list"></ul>
+
+</div>
+
+</section>
+
+
+<!-- COMO TE SIENTES -->
+<section class="container mt-5 emotion-section">
+
+<h3 class="text-center mb-4"> ¿Cómo te sientes hoy?</h3>
+
+<div class="emotion-grid">
+
+<div class="emotion-card" data-emotion="Feliz">
+<span>😊</span>
+<p>Feliz</p>
+</div>
+
+<div class="emotion-card" data-emotion="Calmado">
+<span>😌</span>
+<p>Calmado</p>
+</div>
+
+<div class="emotion-card" data-emotion="Ansioso">
+<span>😟</span>
+<p>Ansioso</p>
+</div>
+
+<div class="emotion-card" data-emotion="Triste">
+<span>😔</span>
+<p>Triste</p>
+</div>
+
+</div>
+
+<!-- RESULTADO -->
+<div class="emotion-result card mt-4 p-4 text-center">
+
+<h5>Estado emocional actual</h5>
+
+<p id="emotionResult" class="emotion-text">
+Selecciona una emoción
+</p>
+
+<div id="emotionAdvice" class="emotion-advice"></div>
+
+</div>
+
+</section>
+
+<!-- ================= CARRUSEL ================= -->
+<!-- ===== SECCION RECURSOS VISUALES ===== -->
+<section class="container mt-5 recursos-section">
+
+<h3 class="titulo-animado text-center mb-4">
+Recursos Visuales Médicos
+</h3>
+
+<div id="carouselExample" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+<!-- Indicadores -->
+<div class="carousel-indicators">
+<button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active"></button>
+<button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1"></button>
+<button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2"></button>
+</div>
+
+<div class="carousel-inner rounded shadow-lg">
+
+<!-- ITEM 1 -->
+<div class="carousel-item active">
+<div class="img-container">
+<img src="https://assets.roche.com/f/173960/x/8f35d4dc88/roche_10160.tif/m/1223x688/filters:format(webp):quality(90)/"
+class="d-block w-100">
+<div class="overlay-text">
+<h4>Investigación Médica</h4>
+<p>Innovación y avances científicos</p>
+</div>
+</div>
+</div>
+
+<!-- ITEM 2 -->
+<div class="carousel-item">
+<div class="img-container">
+<img src="https://assets.roche.com/f/173960/1920x1080/098ea83871/about-roche.png/m/600x338/filters:format(webp):quality(90)/"
+class="d-block w-100">
+<div class="overlay-text">
+<h4>Tecnología en Salud</h4>
+<p>Equipos modernos para salvar vidas</p>
+</div>
+</div>
+</div>
+
+<!-- ITEM 3 -->
+<div class="carousel-item">
+<div class="img-container">
+<img src="https://assets.roche.com/f/176330/1920x1080/ab154d5dc4/personalised-healthcare.png/m/392x221/filters:format(webp):quality(90)/"
+class="d-block w-100">
+<div class="overlay-text">
+<h4>Atención Profesional</h4>
+<p>Compromiso con el bienestar</p>
+</div>
+</div>
+</div>
+
+</div>
+
+<!-- Botones -->
+<button class="carousel-control-prev" type="button"
+data-bs-target="#carouselExample" data-bs-slide="prev">
+<span class="carousel-control-prev-icon"></span>
+</button>
+
+<button class="carousel-control-next" type="button"
+data-bs-target="#carouselExample" data-bs-slide="next">
+<span class="carousel-control-next-icon"></span>
+</button>
+
+</div>
+</section>
+
+<!-- ================= FAQ INTERACTIVO ================= -->
+<section class="container mt-5 faq-section">
+
+<h3 class="faq-title text-center mb-4">
+Preguntas Frecuentes sobre Bienestar
+</h3>
+
+<div class="accordion faq-accordion" id="faq">
+
+<!-- PREGUNTA 1 -->
+<div class="accordion-item">
+<h2 class="accordion-header">
+<button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#q1">
+<span class="icono"></span>
+¿Qué hago si tengo ansiedad?
+</button>
+</h2>
+
+<div id="q1" class="accordion-collapse collapse show" data-bs-parent="#faq">
+<div class="accordion-body">
+- Practica respiración profunda, habla con alguien de confianza y realiza pausas activas durante el día.
+</div>
+</div>
+</div>
+
+<!-- PREGUNTA 2 -->
+<div class="accordion-item">
+<h2 class="accordion-header">
+<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#q2">
+<span class="icono"></span>
+¿Cómo mejorar mi bienestar emocional?
+</button>
+</h2>
+
+<div id="q2" class="accordion-collapse collapse" data-bs-parent="#faq">
+<div class="accordion-body">
+- Dormir bien, ejercitarte regularmente y expresar tus emociones ayuda a mantener equilibrio mental.
+</div>
+</div>
+</div>
+
+<!-- PREGUNTA 3 EXTRA -->
+<div class="accordion-item">
+<h2 class="accordion-header">
+<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#q3">
+<span class="icono"></span>
+¿Cómo reducir el estrés diario?
+</button>
+</h2>
+
+<div id="q3" class="accordion-collapse collapse" data-bs-parent="#faq">
+<div class="accordion-body">
+- Organiza tu tiempo, respira lentamente y dedica momentos a actividades que disfrutes.
+</div>
+</div>
+</div>
+
+</div>
+</section>
+<section class="ws-section">
+
+  <div class="ws-grid">
+
+    <!-- CARD 1 -->
+    <div class="ws-card">
+      <img src="assets/images/parenting.jpg" class="ws-img" alt="Parenting">
+      <div class="ws-overlay">
+        <h5>Parenting</h5>
+        <p>Los servicios de Parenting de Morneau Shepell (ahora parte de LifeWorks/TELUS Health) ofrecen apoyo confidencial...</p>
+      </div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="ws-card">
+      <img src="assets/images/finanzas.jpg" class="ws-img" alt="Finanzas">
+      <div class="ws-overlay">
+        <h5>Finanzas</h5>
+        <p>Morneau Shepell, ahora parte de TELUS Health, ofrece servicios financieros integrados dentro de sus programas...</p>
+      </div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="ws-card">
+      <img src="assets/images/abuelos.jpg" class="ws-img" alt="Adultos mayores">
+      <div class="ws-overlay">
+        <h5>Adultos mayores</h5>
+        <p>Morneau Shepell ofrece servicios de apoyo con recursos para el cuidado de adultos mayores...</p>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- Dashboard-->
+       <section class="container mt-5 habits-section">
+
+  <h3 class="text-center mb-4"> Relajate un Poco</h3>
+
+  <div class="habits-grid">
+
+    <!-- Pausas activas -->
+    <div class="habit-card">
+      <h5> Pausas activas</h5>
+      <p>Muévete y estira tu cuerpo</p>
+      <button onclick="registrarHabito('pausa')">✔ Completar</button>
+      <span id="pausaCount">0</span>
+    </div>
+
+    <!-- Respiración -->
+    <div class="habit-card">
+      <h5> Respiración</h5>
+      <p>Reduce el estrés en minutos</p>
+      <button onclick="registrarHabito('respiracion')">✔ Completar</button>
+      <span id="respiracionCount">0</span>
+    </div>
+
+    <!-- Salud mental -->
+    <div class="habit-card">
+      <h5> Salud mental</h5>
+      <p>Tómate un momento para ti</p>
+      <button onclick="registrarHabito('mental')">✔ Completar</button>
+      <span id="mentalCount">0</span>
+    </div>
+
+  </div>
+
+  <!-- NIVEL DE ESTRÉS -->
+  <div class="stress-box mt-4 text-center">
+    <h5>Nivel de estrés detectado</h5>
+    <p id="stressNivel">--</p>
+    <div id="recomendacion"></div>
+  </div>
+
+</section>
+
+<div class="text-center my-4">
+
+<a href="https://www.google.com/maps/place/Productos+Roche/@-12.0957274,-77.0244044,708m/data=!3m2!1e3!4b1!4m6!3m5!1s0x9105c7d450204901:0x515c3cc4f2e952bf!8m2!3d-12.0957327!4d-77.0218295!16s%2Fg%2F1txy3dff"
+   target="_blank"
+   class="location-btn">
+
+<i class="bi bi-geo-alt-fill"></i> Ver ubicación
+
+</a>
+
+</div>
+
+<section class="container mt-5 game-layout">
+
+  <!-- IZQUIERDA -->
+  <div class="game-left">
+
+    <h3 class="mb-3">Reto Diario</h3>
+
+    <div class="game-card">
+
+      <p id="retoTexto">Haz una pausa y respira 10 segundos</p>
+
+      <button onclick="iniciarReto()">Iniciar</button>
+
+      <div id="timer">10</div>
+
+      <p>Puntos: <span id="puntos">0</span></p>
+      <p>Racha 🔥: <span id="racha">0</span></p>
+
+      <div id="mensajeGame"></div>
 
     </div>
 
   </div>
 
+  <!-- DERECHA -->
+  <div class="game-right">
+    <img src="assets/images/salud.jpg" id="gameImage" class="game-img">
+  </div>
+
+</section>
+
+<section class="lyra-wellness">
+
+  <h2> Tips para tu bienestar</h2>
+  <p class="wellness-subtitle">
+    Tómate un momento para relajarte y reconectar contigo 💫
+  </p>
+
+  <div class="wellness-cards">
+
+    <!-- RELAJACIÓN -->
+    <div class="wellness-card">
+      <h3>🛀 Relajación</h3>
+      <ul>
+        <li>Escucha música tranquila</li>
+        <li>Aléjate del celular por unos minutos</li>
+        <li>Estira tu cuerpo suavemente</li>
+      </ul>
+    </div>
+
+    <!-- RESPIRACIÓN -->
+    <div class="wellness-card">
+      <h3>🌬️ Respiración</h3>
+      <ul>
+        <li>Inhala profundo por 4 segundos</li>
+        <li>Sostén el aire 4 segundos</li>
+        <li>Exhala lentamente por 6 segundos</li>
+      </ul>
+    </div>
+
+    <!-- MEDITACIÓN -->
+    <div class="wellness-card">
+      <h3>🧘 Meditación</h3>
+      <ul>
+        <li>Cierra los ojos y enfócate en tu respiración</li>
+        <li>Deja pasar los pensamientos sin juzgar</li>
+        <li>Empieza con 5 minutos diarios</li>
+      </ul>
+    </div>
+
+  </div>
+
+</section>
+
+
+
+
+<!-- ================= FORMULARIO ================= -->
+<section class="container mt-5 contact-section">
+
+<h3 class="text-center mb-4"> Hablemos contigo</h3>
+
+<form id="contactForm" class="contact-card">
+
+<!-- Nombre -->
+<div class="input-group-custom">
+<input type="text" required>
+<label>Nombre</label>
 </div>
 
-
-<div id="mainContent" class="screen">
-  <h1>Bienvenido a la plataforma 💙</h1>
+<!-- Email -->
+<div class="input-group-custom">
+<input type="email" required>
+<label>Correo electrónico</label>
 </div>
 
+<!-- Estado emocional -->
+<label class="emotion-label">¿Cómo te sientes hoy?</label>
+
+<div class="mini-emotions">
+<button type="button" class="mini-emotion">😊</button>
+<button type="button" class="mini-emotion">😌</button>
+<button type="button" class="mini-emotion">😟</button>
+<button type="button" class="mini-emotion">😔</button>
+</div>
+
+<!-- Mensaje -->
+<div class="input-group-custom">
+<textarea rows="4" required></textarea>
+<label>Cuéntanos más...</label>
+</div>
+
+<button class="send-btn">
+<span>Enviar mensaje</span>
+</button>
+
+<div id="msg" class="success-message"></div>
+
+</form>
+
+</section>
+
+<!-- ================= CHATBOT IA ================= -->
+
+<div id="chatbot">
+
+<!-- BOTÓN FLOTANTE -->
+<div id="chatToggle">💬</div>
+
+<!-- CHATBOX -->
+<div id="chatbox" class="hidden">
+
+<div class="chat-header">
+<div class="bot-info">
+<div class="bot-avatar">🤖</div>
+<div>
+<h6>Roche Care IA</h6>
+<small>Asistente emocional</small>
+</div>
+</div>
+<span id="closeChat">✕</span>
+</div>
+
+<div id="messages">
+<div class="message bot">
+Hola 👋 ¿Cómo te sientes hoy?
+</div>
+</div>
+
+<div class="typing" id="typing">IA escribiendo...</div>
+
+<div class="chat-input">
+<input id="userInput" placeholder="Escribe cómo te sientes..." />
+<button id="sendBtn">➤</button>
+</div>
+
+</div>
+
+</div>
+
+<div class="lyra-container">
+
+  <!-- BOTONES ARRIBA -->
+  <div class="lyra-top-buttons">
+
+    <a href="https://wa.me/?text=Te%20comparto%20esta%20página:%20https://tupagina.com" 
+       target="_blank" 
+       class="lyra-btn chat-btn">
+      📤 Compartir por WhatsApp
+    </a>
+
+    <a href="reconocimientos.html" class="lyra-btn reco-btn">
+      🏆 Reconocimientos
+    </a>
+
+  </div>
+<!-- BOTÓN -->
+<button class="open-form-btn" onclick="toggleForm()">
+  ✉️ Enviar consulta
+</button>
+
+<!-- FORMULARIO (OCULTO) -->
+<div class="lyra-form hidden" id="formularioBox">
+
+  <h5>Envíanos tu consulta</h5>
+
+  <form onsubmit="enviarConsulta(event)">
+    <input type="text" id="nombre" placeholder="Tu nombre" required>
+    <input type="email" id="correo" placeholder="Tu correo" required>
+    <textarea id="pregunta" placeholder="Escribe tu pregunta..." required></textarea>
+
+    <button type="submit">Enviar consulta</button>
+  </form>
+
+  <p class="respuesta-msg">
+    Te responderemos en un plazo de 12 a 24 horas ⏱️
+  </p>
+
+  <p id="confirmacion"></p>
+
+</div>
+</div>
+<!-- FOOTER -->
+<footer class="footer text-center">
+
+<div class="container">
+
+<h5 class="footer-title">
+© Roche Perú — Plataforma de Autocuidado
+</h5>
+
+<p class="footer-sub">
+Cuidando tu bienestar todos los dias
+</p>
+
+<!-- Redes sociales -->
+<div class="social-icons">
+
+<a href="https://web.facebook.com/RochePharmaPeru/?locale=es_LA&_rdc=1&_rdr#" class="social-link">
+<i class="bi bi-facebook"></i>
+</a>
+
+<a href="https://www.instagram.com/roche_latam/" class="social-link">
+<i class="bi bi-instagram"></i>
+</a>
+
+<a href="https://x.com/Roche" class="social-link">
+<i class="bi bi-twitter-x"></i>
+</a>
+
+<a href="https://www.linkedin.com/showcase/rocheperu/?originalSubdomain=pe" class="social-link">
+<i class="bi bi-linkedin"></i>
+</a>
+
+</div>
+
+<!-- LIBRO DE RECLAMACIONES -->
+<a href="#" class="reclamaciones-link" data-bs-toggle="modal" data-bs-target="#reclamacionesModal">
+ Libro de Reclamaciones
+</a>
+
+<div class="modal fade" id="reclamacionesModal">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content reclamaciones-modal">
+
+<div class="modal-header border-0">
+<h5 class="modal-title"> Libro de Reclamaciones</h5>
+<button class="btn-close" data-bs-dismiss="modal"></button>
+</div>
+
+<div class="modal-body">
+
+<p class="text-primary mb-3">
+Tu opinión es importante. Déjanos tu reclamo o sugerencia 💙
+</p>
+
+<!-- Nombre -->
+<div class="form-floating mb-3">
+<input type="text" class="form-control" id="nombre" placeholder="Nombre">
+<label> Nombre completo</label>
+</div>
+
+<!-- Email -->
+<div class="form-floating mb-3">
+<input type="email" class="form-control" id="correo" placeholder="Correo">
+<label> Correo electrónico</label>
+</div>
+
+<!-- Tipo -->
+<select class="form-select mb-3">
+<option selected disabled>Tipo de solicitud</option>
+<option>Reclamo</option>
+<option>Queja</option>
+<option>Sugerencia</option>
+</select>
+
+<!-- Mensaje -->
+<div class="form-floating mb-3">
+<textarea class="form-control" style="height:120px" placeholder="Mensaje"></textarea>
+<label> Describe tu caso</label>
+</div>
+
+</div>
+
+<div class="modal-footer border-0 d-flex justify-content-between">
+
+<small class="text-muted">Respuesta en 24-48h</small>
+
+<button class="btn-send">
+ Enviar
+</button>
+
+</div>
+
+</div>
+</div>
+</div>
+
+</div>
+
+</footer>
 
 
-<script src="js/inicio.js"></script>
-
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
+<script src="js/chatbot.js"></script>
+<script src="js/app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script type="module" src="js/emociones.js"></script>
+<script type="module" src="js/firebase.js"></script>
+<script src="components/Search.js"></script>
 </body>
 </html>
-
-
-
-
