@@ -1,24 +1,27 @@
-const toggleBtn = document.getElementById("darkModeToggle");
-const icon = toggleBtn.querySelector(".icon");
+/* ============================================================
+        1. MODO OSCURO
+       ============================================================ */
+    const toggleBtn = document.getElementById("darkModeToggle");
+    const icon = toggleBtn ? toggleBtn.querySelector(".icon") : null;
 
-toggleBtn.addEventListener("click", () => {
-
-    document.body.classList.toggle("dark-mode");
-
-    /* animación */
-    toggleBtn.classList.add("animate");
-
-    setTimeout(()=>{
-        toggleBtn.classList.remove("animate");
-    },500);
-
-    /* cambiar icono */
-    if(document.body.classList.contains("dark-mode")){
-        icon.textContent="☀️";
-    }else{
-        icon.textContent="🌙";
+    if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark-mode");
+        if (icon) icon.textContent = "☀️";
     }
-});
+
+    if (toggleBtn) {
+        toggleBtn.addEventListener("click", () => {
+            document.body.classList.toggle("dark-mode");
+            if (document.body.classList.contains("dark-mode")) {
+                if (icon) icon.textContent = "☀️";
+                localStorage.setItem("theme", "dark");
+            } else {
+                if (icon) icon.textContent = "🌙";
+                localStorage.setItem("theme", "light");
+            }
+        });
+    }
+
 
 
 const canvas = document.getElementById("medicineParticles");

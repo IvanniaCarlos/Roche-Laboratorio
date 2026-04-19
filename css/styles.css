@@ -3,7 +3,7 @@
 ================================ */
 
 :root{
- --primary:#0066CC;
+ --primary:#0056b3;
  --bg:#F5F7FA;
  --text:#222222;
  --card:#ffffff;
@@ -12,6 +12,8 @@
 /* ===============================
    MODO OSCURO - SOLUCIÓN MAESTRA
 ================================ */
+
+
 
 .dark-mode {
   --bg: #000000;
@@ -945,7 +947,7 @@ body{
 /* ================= FOOTER ================= */
 
 .footer{
- background:#0066CC;
+ background:#0056b3;
  color:white;
  padding:40px 20px;
  margin-top:60px;
@@ -1029,7 +1031,7 @@ body{
 /* ================= BUSCADOR CORREGIDO ================= */
 
 .search-card {
-    background: #168be5; /* Fondo Crema Suave */
+    background: #0056b3; /* Fondo Crema Suave */
     padding: 30px;
     border-radius: 20px;
     border: 1px solid #E9E4DE;
@@ -1350,31 +1352,46 @@ body{
 
 /* BOTONES SUPERIORES */
 .lyra-top-buttons {
-  display: flex;
-  gap: 12px;
-  margin-bottom: 25px;
+    display: flex;
+    gap: 10px;            
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 15px;
 }
-
 .lyra-btn {
-  flex: 1;
-  text-align: center;
-  padding: 12px 10px;
-  border-radius: 14px;
-  text-decoration: none;
-  font-weight: 600;
-  color: white;
-  transition: all 0.25s ease;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    flex: 1;              
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 12px 5px;    
+    font-size: 14px;      
+    text-decoration: none;
+    border-radius: 8px;
+    white-space: normal;  
+    min-height: 50px;     
+}
+@media (max-width: 480px) {
+    .lyra-top-buttons {
+        padding: 0 10px;  /* Margen a los lados en el cel */
+    }
+    
+    .lyra-btn {
+        font-size: 12px;  /* Letra un poco más pequeña para que quepa el texto largo */
+        line-height: 1.2;
+    }
 }
 
 /* BOTÓN WHATSAPP */
 .chat-btn {
-  background: linear-gradient(135deg, #25D366, #1ebe5d);
+    background-color: #1bc515; /* Oro */
+    color: #000000 !important;
 }
 
 /* BOTÓN RECONOCIMIENTOS */
 .reco-btn {
-  background: linear-gradient(135deg, #6c5ce7, #8e7cff);
+  background-color: #FFD700; /* Oro */
+    color: #000000 !important;
 }
 
 /* HOVER BOTONES */
@@ -1465,17 +1482,10 @@ body{
 
 /* BOTÓN */
 .open-form-btn {
-  width: 100%;
-  padding: 14px;
-  border: none;
-  border-radius: 14px;
-  background: linear-gradient(135deg, #6c5ce7, #8e7cff);
-  color: white;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  margin-bottom: 20px;
-  transition: 0.3s;
+    width: 100%;          
+    max-width: 400px;     
+    margin: 10px auto;
+    display: block;
 }
 
 .open-form-btn:hover {
@@ -1493,9 +1503,12 @@ body{
     flex-direction: column;
   }
 
-  .lyra-btn {
-    width: 100%;
-  }
+.lyra-btn {
+    color: #ffffff !important; 
+    font-weight: bold;         
+    text-decoration: none;     
+    transition: background 0.3s;
+}
 }
 
 /*Whole*/
@@ -1597,7 +1610,7 @@ body{
 .habit-card button{
     margin-top:10px;
     border:none;
-    background:#0066CC;
+    background:#0056b3;
     color:white;
     padding:10px 15px;
     border-radius:10px;
@@ -1606,7 +1619,7 @@ body{
 }
 
 .habit-card button:hover{
-    background:#004c99;
+    background:#0056b3;
     transform:scale(1.05);
 }
 
@@ -2229,7 +2242,7 @@ BOTON VOLVER*/
 
 /* TARJETAS */
 .wellness-card {
-  background: #1f1f2e;
+  background: #0056b3;
   padding: 20px;
   border-radius: 16px;
   color: white;
