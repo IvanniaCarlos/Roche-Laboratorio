@@ -13,41 +13,46 @@
    MODO OSCURO - SOLUCIÓN MAESTRA
 ================================ */
 
+/* ==============================================
+   MODO OSCURO - CORRECCIÓN PARA SIDE-MENU
+================================================= */
+
 .dark-mode {
   --bg: #000000;
   --text: #ffffff;
   --card: #1e293b;
 }
 
-/* 1. TEXTOS: Forzamos blanco en todos los elementos del nav */
+/* 1. EL MENÚ LATERAL (El que salía blanco en la foto) */
+/* Cambiamos el degradado blanco por uno oscuro */
+.dark-mode .side-menu {
+    background: linear-gradient(135deg, #000000, #1a1a1a) !important;
+    color: #ffffff !important;
+    box-shadow: 5px 0 25px rgba(0,0,0,0.8) !important;
+}
+
+/* 2. TEXTOS Y LINKS: Forzamos blanco en todo el nav y menú lateral */
 .dark-mode .nav-link, 
 .dark-mode .navbar-brand,
-.dark-mode .navbar-toggler,
-.dark-mode #sideMenu a {
+.dark-mode .side-menu a,
+.dark-mode .navbar-toggler {
     color: #ffffff !important;
 }
 
-/* 2. EL FONDO: Esta es la clave para que no salga blanco en celular */
-/* Aplicamos el fondo oscuro a TODA la estructura del nav de Bootstrap */
-.dark-mode .navbar,
-.dark-mode .navbar-collapse,
-.dark-mode .navbar-nav,
-.dark-mode .container-fluid,
-.dark-mode #sideMenu {
-    background-color: #1a1a1a !important; 
-    border-color: #333 !important;
+/* 3. NAVBAR Y BOTÓN HAMBURGUESA */
+.dark-mode .navbar {
+    background-color: #000000 !important;
 }
 
-/* 3. EL BOTÓN HAMBURGUESA: Para que se vea en el celular */
+.dark-mode .custom-toggler .line {
+    background: #ffffff !important; /* Vuelve blancas las rayitas */
+}
+
 .dark-mode .navbar-toggler-icon {
-    filter: invert(1) !important; /* Vuelve el icono blanco */
+    filter: invert(1) !important;
 }
 
-.dark-mode .navbar-toggler {
-    border-color: rgba(255,255,255,0.5) !important;
-}
-
-/* 4. CURSORES Y HEADER (Tus estilos originales) */
+/* 4. CURSORES Y HEADER (Tus estilos originales que sí sirven) */
 #closeChat, #chatToggle, #sendBtn, #menuBtn,
 .theme-toggle, .mini-emotion, .btn, button {
     cursor: pointer !important;
@@ -57,7 +62,7 @@
     cursor: default !important;
 }
 
-/* 5. TOGGLE (BOTÓN SOL/LUNA): Tu diseño original */
+/* 5. EL BOTÓN TOGGLE (Sol/Luna) */
 .theme-toggle {
     width: 50px;
     height: 50px;
