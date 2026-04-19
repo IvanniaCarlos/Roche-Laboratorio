@@ -38,8 +38,26 @@ button {
     cursor: default !important;
 }
 
-.dark-mode .navbar {
-    background-color: var(--card) !important;
+/* Esto asegura que tanto la barra como el menú desplegable sean oscuros */
+.dark-mode .navbar, 
+.dark-mode .navbar-collapse,
+.dark-mode .nav-item {
+    background-color: #1a1a1a !important; /* Gris muy oscuro */
+}
+/* Color blanco para el icono de menú (hamburguesa) en modo oscuro */
+.dark-mode .navbar-toggler-icon {
+    filter: invert(1);
+}
+
+/* Quitar bordes blancos del botón en el celular */
+.dark-mode .navbar-toggler {
+    border-color: rgba(255,255,255,0.1);
+}
+
+/* Si usas el menú lateral (sideMenu) que mencionaste antes, aseguremos su fondo */
+.dark-mode #sideMenu {
+    background-color: #1a1a1a !important;
+    border-left: 1px solid #333;
 }
 
 /* ================= DARK MODE TOGGLE ================= */
